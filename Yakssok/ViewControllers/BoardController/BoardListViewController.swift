@@ -1,0 +1,107 @@
+import UIKit
+
+class BoardListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var BoardTable: UITableView!
+    var board_list : Array<Board> = Array()
+    var boardProtocol : BoardProtocol?
+    var board : Board?
+    
+    var type : String?
+    var b_idx : Int?
+    
+    let SERVER_ADDRESS : String = "http://172.30.1.2:8080/Yakssok"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        type = "notice"
+        type_info.text = "공지사항"
+        boardLoad()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return board_list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell : BoardCell = BoardTable.dequeueReusableCell(withIdentifier: "BoardCell", for: indexPath) as! BoardCell
+            let row = indexPath.row
+            
+            cell.title.text = board_list[row].title!
+            cell.nickname.text = board_list[row].nickname!
+            cell.b_idx.text = String(board_list[row].b_idx!)
+            cell.b_idx.isHidden = true
+            
+            
+            return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        b_idx = board_list[row].b_idx!
+        NSLog("b_idx : "+String(b_idx!))
+        
+        self.performSegue(withIdentifier: "DetailView", sender: self)
+    }
+    @IBOutlet weak var type_info: UILabel!
+    
+    @IBAction func btn_notice(_ sender: Any) {
+        type = "notice"
+        type_info.text = "공지사항"
+        boardLoad()
+    }
+    
+    @IBAction func btn_share(_ sender: Any) {
+        type = "share"
+        type_info.text = "팁&공유"
+        boardLoad()
+    }
+    
+    @IBAction func btn_free(_ sender: Any) {
+        type = "free"
+        type_info.text = "자유게시판"
+        boardLoad()
+    }
+    
+    func boardLoad(){
+        let defaultSession = URLSession(configuration: .default)
+        var dataTask : URLSessionDataTask?
+        let urlComponents = URLComponents(string:  SERVER_ADDRESS + "/mBoard/\(type!)")
+        guard let url = urlComponents?.url else { return }
+        
+        dataTask = defaultSession.dataTask(with: url) {data, response, error in
+            if let error = error {
+                NSLog("통신에러!!! 에러 메시지 : "+error.localizedDescription)
+            }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                self.board_list = try! JSONDecoder().decode(Array<Board>.self, from: data)
+                NSLog("접속성공")
+                
+                
+                DispatchQueue.main.async {
+                    self.BoardTable.reloadData()
+                }
+            }
+        }
+        dataTask?.resume()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        NSLog("데이터 전달 전 prepare접근!!")
+        var board : Board = Board()
+        board.type = type
+        board.b_idx = b_idx
+        if segue.identifier == "DetailView" {
+            NSLog("타입 전달!!! \(board.type)")
+            let  boardListView : BoardViewController = segue.destination as!
+            BoardViewController
+            boardListView.setBoard(board: board)
+            
+        }
+    }
+    
+    
+    
+}

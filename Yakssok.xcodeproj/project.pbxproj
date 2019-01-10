@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8611D2921E58E1A00FF5CED /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2821E58E1A00FF5CED /* Board.swift */; };
+		D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2A21E58E2A00FF5CED /* BoardCell.swift */; };
+		D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */; };
+		D8611D2F21E58E8100FF5CED /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2E21E58E8100FF5CED /* BoardViewController.swift */; };
 		E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801803621DDF23F008C3E93 /* AppDelegate.swift */; };
-		E801803921DDF23F008C3E93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801803821DDF23F008C3E93 /* ViewController.swift */; };
+		E801803921DDF23F008C3E93 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801803821DDF23F008C3E93 /* MainView.swift */; };
 		E801803C21DDF23F008C3E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E801803A21DDF23F008C3E93 /* Main.storyboard */; };
 		E801803E21DDF251008C3E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E801803D21DDF251008C3E93 /* Assets.xcassets */; };
 		E801804121DDF251008C3E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E801803F21DDF251008C3E93 /* LaunchScreen.storyboard */; };
-		E801804C21DDF251008C3E93 /* YakssokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801804B21DDF251008C3E93 /* YakssokTests.swift */; };
+		E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801805A21DE01F1008C3E93 /* MemberRegistView.swift */; };
+		E801806521DE0360008C3E93 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = E801805C21DE035F008C3E93 /* heart.png */; };
+		E801806621DE0360008C3E93 /* peptic.png in Resources */ = {isa = PBXBuildFile; fileRef = E801805D21DE035F008C3E93 /* peptic.png */; };
+		E801806721DE0360008C3E93 /* Yakssok_Icon.ico in Resources */ = {isa = PBXBuildFile; fileRef = E801805E21DE035F008C3E93 /* Yakssok_Icon.ico */; };
+		E801806821DE0360008C3E93 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = E801805F21DE0360008C3E93 /* title.png */; };
+		E801806921DE0360008C3E93 /* gido.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806021DE0360008C3E93 /* gido.png */; };
+		E801806A21DE0360008C3E93 /* life.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806121DE0360008C3E93 /* life.png */; };
+		E801806B21DE0360008C3E93 /* cold.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806221DE0360008C3E93 /* cold.png */; };
+		E801806C21DE0360008C3E93 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806321DE0360008C3E93 /* path.png */; };
+		E801806D21DE0360008C3E93 /* fever.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806421DE0360008C3E93 /* fever.png */; };
+		E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82CEEEB21E32AB2001974EB /* LoginViewController.swift */; };
+		E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +41,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8611D2821E58E1A00FF5CED /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		D8611D2A21E58E2A00FF5CED /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
+		D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
+		D8611D2E21E58E8100FF5CED /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		E801803321DDF23F008C3E93 /* Yakssok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yakssok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E801803621DDF23F008C3E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E801803821DDF23F008C3E93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E801803821DDF23F008C3E93 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E801803B21DDF23F008C3E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E801803D21DDF251008C3E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E801804021DDF251008C3E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E801804221DDF251008C3E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E801804721DDF251008C3E93 /* YakssokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YakssokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E801804B21DDF251008C3E93 /* YakssokTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YakssokTests.swift; sourceTree = "<group>"; };
-		E801804D21DDF251008C3E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E801805A21DE01F1008C3E93 /* MemberRegistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegistView.swift; sourceTree = "<group>"; };
+		E801805C21DE035F008C3E93 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		E801805D21DE035F008C3E93 /* peptic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peptic.png; sourceTree = "<group>"; };
+		E801805E21DE035F008C3E93 /* Yakssok_Icon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Yakssok_Icon.ico; sourceTree = "<group>"; };
+		E801805F21DE0360008C3E93 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		E801806021DE0360008C3E93 /* gido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gido.png; sourceTree = "<group>"; };
+		E801806121DE0360008C3E93 /* life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life.png; sourceTree = "<group>"; };
+		E801806221DE0360008C3E93 /* cold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cold.png; sourceTree = "<group>"; };
+		E801806321DE0360008C3E93 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
+		E801806421DE0360008C3E93 /* fever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fever.png; sourceTree = "<group>"; };
+		E82CEEEB21E32AB2001974EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +85,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8611D2521E58D3200FF5CED /* BoardController */ = {
+			isa = PBXGroup;
+			children = (
+				D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */,
+				D8611D2E21E58E8100FF5CED /* BoardViewController.swift */,
+			);
+			path = BoardController;
+			sourceTree = "<group>";
+		};
+		D8611D2621E58D4400FF5CED /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D8611D2721E58D4B00FF5CED /* Board */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D8611D2721E58D4B00FF5CED /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				D8611D2821E58E1A00FF5CED /* Board.swift */,
+				D8611D2A21E58E2A00FF5CED /* BoardCell.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
 		E801802A21DDF23F008C3E93 = {
 			isa = PBXGroup;
 			children = (
 				E801803521DDF23F008C3E93 /* Yakssok */,
-				E801804A21DDF251008C3E93 /* YakssokTests */,
 				E801803421DDF23F008C3E93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,8 +131,10 @@
 		E801803521DDF23F008C3E93 /* Yakssok */ = {
 			isa = PBXGroup;
 			children = (
+				D8611D2621E58D4400FF5CED /* model */,
+				E801805721DE0184008C3E93 /* images */,
+				E801805621DE0161008C3E93 /* ViewControllers */,
 				E801803621DDF23F008C3E93 /* AppDelegate.swift */,
-				E801803821DDF23F008C3E93 /* ViewController.swift */,
 				E801803A21DDF23F008C3E93 /* Main.storyboard */,
 				E801803D21DDF251008C3E93 /* Assets.xcassets */,
 				E801803F21DDF251008C3E93 /* LaunchScreen.storyboard */,
@@ -87,13 +143,33 @@
 			path = Yakssok;
 			sourceTree = "<group>";
 		};
-		E801804A21DDF251008C3E93 /* YakssokTests */ = {
+		E801805621DE0161008C3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E801804B21DDF251008C3E93 /* YakssokTests.swift */,
-				E801804D21DDF251008C3E93 /* Info.plist */,
+				D8611D2521E58D3200FF5CED /* BoardController */,
+				E801803821DDF23F008C3E93 /* MainView.swift */,
+				E801805A21DE01F1008C3E93 /* MemberRegistView.swift */,
+				E82CEEEB21E32AB2001974EB /* LoginViewController.swift */,
+				E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */,
 			);
-			path = YakssokTests;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E801805721DE0184008C3E93 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E801806221DE0360008C3E93 /* cold.png */,
+				E801806421DE0360008C3E93 /* fever.png */,
+				E801806021DE0360008C3E93 /* gido.png */,
+				E801805C21DE035F008C3E93 /* heart.png */,
+				E801806121DE0360008C3E93 /* life.png */,
+				E801806321DE0360008C3E93 /* path.png */,
+				E801805D21DE035F008C3E93 /* peptic.png */,
+				E801805F21DE0360008C3E93 /* title.png */,
+				E801805E21DE035F008C3E93 /* Yakssok_Icon.ico */,
+			);
+			name = images;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +253,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E801806D21DE0360008C3E93 /* fever.png in Resources */,
+				E801806521DE0360008C3E93 /* heart.png in Resources */,
+				E801806B21DE0360008C3E93 /* cold.png in Resources */,
+				E801806C21DE0360008C3E93 /* path.png in Resources */,
 				E801804121DDF251008C3E93 /* LaunchScreen.storyboard in Resources */,
+				E801806A21DE0360008C3E93 /* life.png in Resources */,
+				E801806821DE0360008C3E93 /* title.png in Resources */,
 				E801803E21DDF251008C3E93 /* Assets.xcassets in Resources */,
 				E801803C21DDF23F008C3E93 /* Main.storyboard in Resources */,
+				E801806721DE0360008C3E93 /* Yakssok_Icon.ico in Resources */,
+				E801806921DE0360008C3E93 /* gido.png in Resources */,
+				E801806621DE0360008C3E93 /* peptic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E801803921DDF23F008C3E93 /* ViewController.swift in Sources */,
+				E801803921DDF23F008C3E93 /* MainView.swift in Sources */,
+				E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */,
+				D8611D2921E58E1A00FF5CED /* Board.swift in Sources */,
+				D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */,
+				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
+				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
+				D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */,
 				E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */,
+				D8611D2F21E58E8100FF5CED /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E801804C21DDF251008C3E93 /* YakssokTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
