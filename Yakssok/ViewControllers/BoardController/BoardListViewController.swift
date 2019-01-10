@@ -10,7 +10,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.2:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.22:8080/Yakssok"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
                 NSLog("통신에러!!! 에러 메시지 : "+error.localizedDescription)
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 self.board_list = try! JSONDecoder().decode(Array<Board>.self, from: data)
-                NSLog("접속성공")
+                NSLog("리스트 접속성공")
                 
                 
                 DispatchQueue.main.async {

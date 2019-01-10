@@ -16,7 +16,7 @@ class BoardViewController: UIViewController, BoardProtocol {
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.2:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.22:8080/Yakssok"
     
     func setBoard(board: Board?) {
         if let obj = board {
@@ -24,7 +24,7 @@ class BoardViewController: UIViewController, BoardProtocol {
             type = obj.type
             b_idx = obj.b_idx
         } else {
-            NSLog("Member 객체가 전달되지 않았습니다.")
+            NSLog("객체가 전달되지 않았습니다.")
         }
     }
     
@@ -50,6 +50,7 @@ class BoardViewController: UIViewController, BoardProtocol {
         let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
            self.boardDeleteLoad()
             _ = self.navigationController?.popViewController(animated: true)
+            
           
         }
         alert.addAction(cancle)
@@ -92,63 +93,45 @@ class BoardViewController: UIViewController, BoardProtocol {
     func boardDeleteLoad(){
         NSLog("글 삭제 서버접근")
         
-        let url = URL(string: SERVER_ADDRESS + "/mBoard/\(type!)/delete")!
+        var defaultSession = URLSession(configuration: .default)
+        //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
+        var dataTask : URLSessionDataTask?
+        //url 문자열을 기반으로 다양한 작업을 처리할 수 있는 객체를 생성
+        var urlComponents = URLComponents(string: SERVER_ADDRESS + "/mBoard/\(type!)/delete")
+        //urlComponents 객체의 쿼리스트링을 지정하는 방법 (? 생략 후 키=벨류$키=벨류)
+        //urlComponents?.query
+        
+        //guard let => 변수가 유효한지 확인할 수 있는 변수 유효하지 않다면 else~! (if let) 사용해도 댐
+        guard let url = urlComponents?.url else { return }
+        
         var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        //요청방식 설정
         request.httpMethod = "POST"
-        let postString = "b_idx=\(b_idx!)"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
+        //요청 데이터 설정
+        let body = "b_idx=\(b_idx!)".data(using: String.Encoding.utf8)
+        request.httpBody = body
+        
+        dataTask = defaultSession.dataTask(with: request) { data, response, error in
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+            if let error = error {
+                NSLog("통신에러발생")
+                //error.localizedDescription 어떤 에러가 바랭했느지 확인할 수 있음
+                NSLog("에러 메시지 :"+error.localizedDescription)
+                //data => 서버로부터 넘어온 데이터
+            }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200{
+                NSLog(String(data: data, encoding: .utf8)!)
+                let resultString = String(data: data, encoding: .utf8)
+                NSLog("삭제 결과->\(resultString)")
+                
+                
             }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
         }
-        task.resume()
-        
-//        var resultMap = [String : Int]()
-//        resultMap["one"] = 1
-//        resultMap["two"] = 2
-//
-//        NSLog("resultMap\(resultMap)")
+        //datatask 객체는 일시중지 상태로 생성되며 반드시 resume 메소드를 호출해야한 실행됨
+        dataTask?.resume()
+    }
+    
 
-        
-//        let param = "b_idx=\(b_idx)"
-//        let paramData = param.data(using: .utf8)
-//
-//        let url = URL(string: SERVER_ADDRESS + "/mBord/\(type!)/delete")!
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.httpBody = paramData
-//
-//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//
-//        NSLog("딜리트 전송 url:\(url)")
-//
-//        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let error = error {
-//                NSLog("통신에러!!! 에러 메시지 : "+error.localizedDescription)
-//                return;
-//            }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-//                self.board_view = try! JSONDecoder().decode(Board.self, from: data)
-//                NSLog("접속성공")
-//            }
-//            DispatchQueue.main.async {
-//
-//
-//            }
-//        }
-//        dataTask.resume()
     }
     
     
-}
+
