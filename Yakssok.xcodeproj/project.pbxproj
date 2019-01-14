@@ -30,6 +30,7 @@
 		E801806D21DE0360008C3E93 /* fever.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806421DE0360008C3E93 /* fever.png */; };
 		E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82CEEEB21E32AB2001974EB /* LoginViewController.swift */; };
 		E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */; };
+		EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD0B0921EC7D9E00F4C004 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E801806421DE0360008C3E93 /* fever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fever.png; sourceTree = "<group>"; };
 		E82CEEEB21E32AB2001974EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		EBFD0B0921EC7D9E00F4C004 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		D8611D2621E58D4400FF5CED /* model */ = {
 			isa = PBXGroup;
 			children = (
+				EBFD0B0821EC7D8A00F4C004 /* Member */,
 				D8611D2721E58D4B00FF5CED /* Board */,
 			);
 			path = model;
@@ -176,6 +179,14 @@
 			);
 			name = images;
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EBFD0B0821EC7D8A00F4C004 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				EBFD0B0921EC7D9E00F4C004 /* Member.swift */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */,
 				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
 				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
+				EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */,
 				D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */,
 				D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */,
 				E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */,
