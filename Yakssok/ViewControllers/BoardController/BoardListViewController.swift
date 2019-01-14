@@ -1,26 +1,39 @@
 import UIKit
 
-class BoardListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BoardListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BoardProtocol{
     
     @IBOutlet weak var BoardTable: UITableView!
+    @IBOutlet weak var type_info: UILabel!
+    
     var board_list : Array<Board> = Array()
-    var boardProtocol : BoardProtocol?
+    //var boardProtocol : BoardProtocol?
     var board : Board?
     
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.22:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
+    
+    
+    func setBoard(board: Board?) {
+        if let obj = board {
+            NSLog("글작성하고 전달받은타입\(obj.type)")
+            self.type = obj.type
+            boardLoad()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        type = "notice"
-        type_info.text = "공지사항"
-        boardLoad()
-        
+        if type_info.text == "Label" {
+            type = "notice"
+            type_info.text = "공지사항"
+            boardLoad()
+            }//else if type == "free" {
+//            btn_free(type)
+//        }
+
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return board_list.count
     }
@@ -45,7 +58,6 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.performSegue(withIdentifier: "DetailView", sender: self)
     }
-    @IBOutlet weak var type_info: UILabel!
     
     @IBAction func btn_notice(_ sender: Any) {
         type = "notice"
@@ -66,42 +78,41 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func boardLoad(){
+        NSLog("글쓰기후접속?\(self.type)")
         let defaultSession = URLSession(configuration: .default)
         var dataTask : URLSessionDataTask?
         let urlComponents = URLComponents(string:  SERVER_ADDRESS + "/mBoard/\(type!)")
         guard let url = urlComponents?.url else { return }
-        
+        NSLog("글쓰기후 연결")
         dataTask = defaultSession.dataTask(with: url) {data, response, error in
             if let error = error {
                 NSLog("통신에러!!! 에러 메시지 : "+error.localizedDescription)
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 self.board_list = try! JSONDecoder().decode(Array<Board>.self, from: data)
                 NSLog("리스트 접속성공")
-                
-                
+            
                 DispatchQueue.main.async {
                     self.BoardTable.reloadData()
                 }
             }
         }
         dataTask?.resume()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NSLog("데이터 전달 전 prepare접근!!")
         var board : Board = Board()
         board.type = type
-        board.b_idx = b_idx
         if segue.identifier == "DetailView" {
             NSLog("타입 전달!!! \(board.type)")
-            let  boardListView : BoardViewController = segue.destination as!
+            board.b_idx = b_idx
+            let  boardView : BoardViewController = segue.destination as!
             BoardViewController
-            boardListView.setBoard(board: board)
-            
+            boardView.setBoard(board: board)
+        }else if segue.identifier == "WriteView" {
+            NSLog("글쓰기 데이터 전달 \(board.type!)")
+            //****로그인 구현 완료 되면 m_idx 보내야함!!!!!!!!
+            let writeView : BoardWriteViewController = segue.destination as! BoardWriteViewController
+            writeView.setBoard(board: board)
         }
     }
-    
-    
-    
 }

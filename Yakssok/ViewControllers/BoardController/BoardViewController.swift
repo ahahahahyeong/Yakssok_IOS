@@ -12,11 +12,11 @@ class BoardViewController: UIViewController, BoardProtocol {
     @IBOutlet weak var view_writedate: UILabel!
     
     var board_view : Board = Board()
-     var board_list : Array<Board> = Array()
+    var board_list : Array<Board> = Array()
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.22:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
     
     func setBoard(board: Board?) {
         if let obj = board {
@@ -48,10 +48,8 @@ class BoardViewController: UIViewController, BoardProtocol {
         let cancle = UIAlertAction(title: "cancle", style: UIAlertAction.Style.destructive, handler: nil)
   
         let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
-           self.boardDeleteLoad()
-            _ = self.navigationController?.popViewController(animated: true)
-            
-          
+            self.boardDeleteLoad()
+            //self.performSegue(withIdentifier: "DeleteView", sender: sender)
         }
         alert.addAction(cancle)
         alert.addAction(ok)
@@ -93,11 +91,11 @@ class BoardViewController: UIViewController, BoardProtocol {
     func boardDeleteLoad(){
         NSLog("글 삭제 서버접근")
         
-        var defaultSession = URLSession(configuration: .default)
+        let defaultSession = URLSession(configuration: .default)
         //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
         var dataTask : URLSessionDataTask?
         //url 문자열을 기반으로 다양한 작업을 처리할 수 있는 객체를 생성
-        var urlComponents = URLComponents(string: SERVER_ADDRESS + "/mBoard/\(type!)/delete")
+        let urlComponents = URLComponents(string: SERVER_ADDRESS + "/mBoard/\(type!)/delete")
         //urlComponents 객체의 쿼리스트링을 지정하는 방법 (? 생략 후 키=벨류$키=벨류)
         //urlComponents?.query
         
@@ -122,16 +120,22 @@ class BoardViewController: UIViewController, BoardProtocol {
                 NSLog(String(data: data, encoding: .utf8)!)
                 let resultString = String(data: data, encoding: .utf8)
                 NSLog("삭제 결과->\(resultString)")
-                
-                
             }
         }
         //datatask 객체는 일시중지 상태로 생성되며 반드시 resume 메소드를 호출해야한 실행됨
         dataTask?.resume()
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        board_view.type = type
+        if segue.identifier == "ModifyView" {
+            let boardModify : BoardModifyViewController = segue.destination as! BoardModifyViewController
+            boardModify.setBoard(board: board_view)
+    }
+
 
     }
     
     
 
+}

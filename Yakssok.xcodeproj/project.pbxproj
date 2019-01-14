@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81AD52F21EC207400CFACAF /* BoardModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */; };
+		D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */; };
 		D8611D2921E58E1A00FF5CED /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2821E58E1A00FF5CED /* Board.swift */; };
 		D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2A21E58E2A00FF5CED /* BoardCell.swift */; };
 		D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModifyViewController.swift; sourceTree = "<group>"; };
+		D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardWriteViewController.swift; sourceTree = "<group>"; };
 		D8611D2821E58E1A00FF5CED /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		D8611D2A21E58E2A00FF5CED /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 		D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			children = (
 				D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */,
 				D8611D2E21E58E8100FF5CED /* BoardViewController.swift */,
+				D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */,
+				D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */,
 			);
 			path = BoardController;
 			sourceTree = "<group>";
@@ -283,12 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E801803921DDF23F008C3E93 /* MainView.swift in Sources */,
+				D81AD52F21EC207400CFACAF /* BoardModifyViewController.swift in Sources */,
 				E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */,
 				D8611D2921E58E1A00FF5CED /* Board.swift in Sources */,
 				D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */,
 				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
 				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
 				D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */,
+				D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */,
 				E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */,
 				D8611D2F21E58E8100FF5CED /* BoardViewController.swift in Sources */,
 			);
@@ -452,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NTYDA3DPGG;
 				INFOPLIST_FILE = Yakssok/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -469,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NTYDA3DPGG;
 				INFOPLIST_FILE = Yakssok/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
