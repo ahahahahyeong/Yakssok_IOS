@@ -3,6 +3,7 @@ import UIKit
 
 class BoardWriteViewController: UIViewController,BoardProtocol {
     
+    var boardProtocol: BoardProtocol?
     let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
     var type : String?
     var subject : String?
@@ -34,9 +35,8 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
         }else if type == "free" {
             type_info.text = "자유게시판"
         }
-
-        
     }
+    
     @IBAction func btn_delete(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -46,6 +46,8 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
         contents = write_contents.text
         NSLog("글작성제목 \(subject!), 내용 \(contents!)")
         boardWriteLoad()
+        
+        navigationController?.popViewController(animated: true)
     }
     
     func boardWriteLoad(){
@@ -65,9 +67,13 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
             if let error = error {
                 NSLog("통신에러! 에러메시지:"+error.localizedDescription)
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                NSLog(String(data: data, encoding: .utf8)!)
+                NSLog("작성완료!"+String(data: data, encoding: .utf8)!)
                 let resultString = String(data: data, encoding: .utf8)
             }
+            
+            self.boardProtocol?.setBoard(board: nil)
+            
+            
         }
         dataTask?.resume()
     }

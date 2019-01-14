@@ -1,6 +1,12 @@
 import UIKit
 
 class BoardListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BoardProtocol{
+    func setBoard(board: Board?) {
+        
+        self.boardLoad()
+         
+    }
+    
     
     @IBOutlet weak var BoardTable: UITableView!
     @IBOutlet weak var type_info: UILabel!
@@ -15,23 +21,25 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
     
     
-    func setBoard(board: Board?) {
-        if let obj = board {
-            NSLog("글작성하고 전달받은타입\(obj.type)")
-            self.type = obj.type
-            boardLoad()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if type_info.text == "Label" {
+        
+        if self.type == "free" {
+            type = "free"
+            type_info?.text = "자유게시판"
+            boardLoad()
+            
+        }else if self.type == "share" {
+            type = "share"
+            type_info?.text = "팁&공유게시판"
+            boardLoad()
+            
+        }else if self.type == "notice" || self.type_info.text == "Label" {
             type = "notice"
             type_info.text = "공지사항"
             boardLoad()
-            }//else if type == "free" {
-//            btn_free(type)
-//        }
+        }
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,12 +86,12 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func boardLoad(){
-        NSLog("글쓰기후접속?\(self.type)")
+        NSLog("접속\(self.type)")
         let defaultSession = URLSession(configuration: .default)
         var dataTask : URLSessionDataTask?
         let urlComponents = URLComponents(string:  SERVER_ADDRESS + "/mBoard/\(type!)")
         guard let url = urlComponents?.url else { return }
-        NSLog("글쓰기후 연결")
+        NSLog("연결")
         dataTask = defaultSession.dataTask(with: url) {data, response, error in
             if let error = error {
                 NSLog("통신에러!!! 에러 메시지 : "+error.localizedDescription)
@@ -92,7 +100,9 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
                 NSLog("리스트 접속성공")
             
                 DispatchQueue.main.async {
+                    NSLog("화면갱신1")
                     self.BoardTable.reloadData()
+                    NSLog("화면갱신2")
                 }
             }
         }
@@ -113,6 +123,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
             //****로그인 구현 완료 되면 m_idx 보내야함!!!!!!!!
             let writeView : BoardWriteViewController = segue.destination as! BoardWriteViewController
             writeView.setBoard(board: board)
+            writeView.boardProtocol = self
         }
     }
 }

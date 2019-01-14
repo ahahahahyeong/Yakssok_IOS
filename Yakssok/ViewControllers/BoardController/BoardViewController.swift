@@ -48,7 +48,9 @@ class BoardViewController: UIViewController, BoardProtocol {
         let cancle = UIAlertAction(title: "cancle", style: UIAlertAction.Style.destructive, handler: nil)
   
         let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
+            self.navigationController?.popViewController(animated: true)
             self.boardDeleteLoad()
+            
             //self.performSegue(withIdentifier: "DeleteView", sender: sender)
         }
         alert.addAction(cancle)
@@ -131,7 +133,7 @@ class BoardViewController: UIViewController, BoardProtocol {
         if segue.identifier == "ModifyView" {
             let boardModify : BoardModifyViewController = segue.destination as! BoardModifyViewController
             boardModify.setBoard(board: board_view)
-    }
+        }
 
 
     }

@@ -353,22 +353,22 @@
                                 <color key="textColor" red="0.6705882353" green="0.595703125" blue="0.5669873258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjO-2E-MTj">
-                                <rect key="frame" x="359" y="149" width="55" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          작성자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjO-2E-MTj">
+                                <rect key="frame" x="268" y="149" width="146" height="35"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="745-Ro-PY5"/>
                                     <constraint firstAttribute="height" constant="35" id="Mg8-qG-4wO"/>
+                                    <constraint firstAttribute="width" constant="146" id="c1s-xI-mYP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j0-9R-TUv">
-                                <rect key="frame" x="0.0" y="149" width="359" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j0-9R-TUv">
+                                <rect key="frame" x="0.0" y="149" width="268" height="35"/>
                                 <color key="backgroundColor" white="0.939453125" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="359" id="fAh-pd-BLk"/>
+                                    <constraint firstAttribute="width" constant="268" id="7xW-Fn-1tA"/>
                                     <constraint firstAttribute="height" constant="35" id="kv1-9A-T0f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="15"/>
@@ -795,7 +795,6 @@
                                 <state key="normal" title="작성"/>
                                 <connections>
                                     <action selector="btn_wirte:" destination="QwG-YD-QYM" eventType="touchUpInside" id="Aag-Bq-vQP"/>
-                                    <segue destination="WXa-pZ-i75" kind="show" identifier="WriteCheck" id="FLl-X8-Gfh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWV-aJ-5Ne">
