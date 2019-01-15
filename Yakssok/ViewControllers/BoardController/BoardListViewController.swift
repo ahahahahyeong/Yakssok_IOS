@@ -95,9 +95,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
                 NSLog("리스트 접속성공")
             
                 DispatchQueue.main.async {
-                    NSLog("화면갱신1")
                     self.BoardTable.reloadData()
-                    NSLog("화면갱신2")
                 }
             }
         }
@@ -115,6 +113,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
             boardView.setBoard(board: board)
         }else if segue.identifier == "WriteView" {
             NSLog("글쓰기 데이터 전달 \(board.type!)")
+            //NSLog("글쓰기 멤버 인덱스 전달 \(member.m_idx)")
             //****로그인 구현 완료 되면 m_idx 보내야함!!!!!!!!
             let writeView : BoardWriteViewController = segue.destination as! BoardWriteViewController
             writeView.setBoard(board: board)

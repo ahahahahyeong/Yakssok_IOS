@@ -85,7 +85,6 @@ class LoginViewController: UIViewController {
                 var member: Member = Member()
                 member = self.member
                 NSLog("타입 전달!!! \(member)")
-                
                 self.memberProtocol?.setMember(member: member)
                 
             }

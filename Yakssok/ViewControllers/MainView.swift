@@ -14,32 +14,67 @@ class MainView: UIViewController, MemberProtocol {
     @IBOutlet weak var SearchBar: UISearchBar!
     
     @IBOutlet weak var LoginBtn: UIButton!
+    @IBOutlet weak var LogoutBtn: UIButton!
+    @IBOutlet weak var MemberInfoBtn: UIButton!
     @IBOutlet weak var WelcomNickName: UILabel!
     
     @IBOutlet weak var MemRegBtn: UIButton!
+    
+    var loginMember : Member?
     
     func setMember(member: Member?) {
         if let obj = member {
             NSLog("전달받은 닉네임: -> \(obj.nickname) + \(obj.id)")
             if obj != nil {
+                self.loginMember = member
             DispatchQueue.main.async {
                 self.WelcomNickName.text = "\(String(obj.nickname!))님 환영합니다:)"
-                self.LoginBtn.setTitle("로그아웃", for: .normal)
-                self.MemRegBtn.setTitle("회원정보", for: .normal)
+                self.LoginBtn.isHidden = true
+                self.MemRegBtn.isHidden = true
+                self.MemberInfoBtn.isHidden = false
+                self.LogoutBtn.isHidden = false
+                self.loginMember = member!
                 }
             }else if obj == nil {
-                DispatchQueue.main.async {
-                    self.LoginBtn.setTitle("로그인", for: .normal)
-                    self.MemRegBtn.setTitle("회원가입", for: .normal)
-                }
+                self.loginMember = nil
+                let alert = UIAlertAction(title: "로그인 실패", style: UIAlertAction.Style.default, handler: nil)
+            }else{
+                NSLog("정보가 전달되지 않았습니다.")
             }
-        }else{
-            NSLog("정보가 전달되지 않았습니다.")
         }
     }
     
+
+    @IBAction func ActionLogout(_ sender: Any) {
+        
+        loginMember = nil
+        self.LoginBtn.isHidden = false
+        self.MemRegBtn.isHidden = false
+        self.LogoutBtn.isHidden = true
+        self.MemberInfoBtn.isHidden = true
+        self.WelcomNickName.text = ""
+        NSLog("로그아웃됐니?\(loginMember?.nickname)")
+    }
+    
+    
     override func viewDidLoad() {
+        LoginBtn.isHidden = false
         super.viewDidLoad()
+        //NSLog("로그인??\(loginMember = nil)")
+        if self.loginMember != nil {
+            NSLog("닐값이아닌디\(self.loginMember?.nickname)")
+            LoginBtn.isHidden = true
+            MemRegBtn.isHidden = true
+            LogoutBtn.isHidden = false
+            MemberInfoBtn.isHidden = false
+            
+        }else if self.loginMember == nil {
+            NSLog("닐값인디")
+            LoginBtn.isHidden = false
+            MemRegBtn.isHidden = false
+            LogoutBtn.isHidden = true
+            MemberInfoBtn.isHidden = true
+        }
        
     }
     
