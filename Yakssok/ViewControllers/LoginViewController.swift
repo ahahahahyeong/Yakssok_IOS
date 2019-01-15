@@ -79,13 +79,20 @@ class LoginViewController: UIViewController {
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200{
                 NSLog(String(data: data, encoding: .utf8)!)
                 //let resultString = String(data: data, encoding: .utf8)
-                self.member = try! JSONDecoder().decode(Member.self, from: data)
-                NSLog("정보 결과->\(self.member.nickname)")
-                // 맴버 정보를 받아서 새로운 맴버에 담아서 메인 화면으로 보냄.
-                var member: Member = Member()
-                member = self.member
-                NSLog("타입 전달!!! \(member)")
-                self.memberProtocol?.setMember(member: member)
+                do{
+                    self.member = try JSONDecoder().decode(Member.self, from: data)
+                    NSLog("정보 결과->\(self.member.nickname)")
+                    // 맴버 정보를 받아서 새로운 맴버에 담아서 메인 화면으로 보냄.
+                    var member: Member = Member()
+                    member = self.member
+                    NSLog("타입 전달!!! \(member)")
+                    self.memberProtocol?.setMember(member: member)
+                }catch {
+                    let alert = UIAlertController(title: "로그인실패", message: "다시 시도하세요", preferredStyle: UIAlertController.Style.alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: false, completion: nil)
+                }
                 
             }
         }
