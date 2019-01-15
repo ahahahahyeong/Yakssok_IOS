@@ -4,13 +4,13 @@ import UIKit
 class BoardWriteViewController: UIViewController,BoardProtocol {
     
     var boardProtocol: BoardProtocol?
-    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
+    
+    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
     var type : String?
     var subject : String?
     var contents : String?
     
     @IBOutlet weak var type_info: UILabel!
-
     @IBOutlet weak var write_title: UITextField!
     @IBOutlet weak var write_contents: UITextView!
 
@@ -38,7 +38,7 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
     }
     
     @IBAction func btn_delete(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btn_wirte(_ sender: Any) {
@@ -46,7 +46,6 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
         contents = write_contents.text
         NSLog("글작성제목 \(subject!), 내용 \(contents!)")
         boardWriteLoad()
-        
         navigationController?.popViewController(animated: true)
     }
     
@@ -68,23 +67,9 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
                 NSLog("통신에러! 에러메시지:"+error.localizedDescription)
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 NSLog("작성완료!"+String(data: data, encoding: .utf8)!)
-                let resultString = String(data: data, encoding: .utf8)
             }
-            
             self.boardProtocol?.setBoard(board: nil)
-            
-            
         }
         dataTask?.resume()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "WriteCheck" {
-            var board : Board? = Board()
-            board?.type = type
-            let boardList : BoardListViewController = segue.destination as! BoardListViewController
-            boardList.setBoard(board: board)
-        }
-    }
-    
 }

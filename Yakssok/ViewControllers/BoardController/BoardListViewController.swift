@@ -1,26 +1,21 @@
 import UIKit
 
 class BoardListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BoardProtocol{
-    func setBoard(board: Board?) {
-        
-        self.boardLoad()
-         
-    }
     
+    func setBoard(board: Board?) {
+        self.boardLoad()
+    }
     
     @IBOutlet weak var BoardTable: UITableView!
     @IBOutlet weak var type_info: UILabel!
     
     var board_list : Array<Board> = Array()
-    //var boardProtocol : BoardProtocol?
     var board : Board?
     
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
-    
-    
+    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
     
     override func viewDidLoad() {
         super.viewDidLoad()

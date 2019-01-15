@@ -12,11 +12,12 @@ class BoardViewController: UIViewController, BoardProtocol {
     @IBOutlet weak var view_writedate: UILabel!
     
     var board_view : Board = Board()
+    var boardProtocol : BoardProtocol?
     var board_list : Array<Board> = Array()
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
     
     func setBoard(board: Board?) {
         if let obj = board {
@@ -50,7 +51,7 @@ class BoardViewController: UIViewController, BoardProtocol {
         let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
             self.navigationController?.popViewController(animated: true)
             self.boardDeleteLoad()
-            
+            self.navigationController?.popViewController(animated: true)
             //self.performSegue(withIdentifier: "DeleteView", sender: sender)
         }
         alert.addAction(cancle)
@@ -124,6 +125,7 @@ class BoardViewController: UIViewController, BoardProtocol {
                 NSLog("삭제 결과->\(resultString)")
             }
         }
+        self.boardProtocol?.setBoard(board: nil)
         //datatask 객체는 일시중지 상태로 생성되며 반드시 resume 메소드를 호출해야한 실행됨
         dataTask?.resume()
     }
@@ -133,11 +135,7 @@ class BoardViewController: UIViewController, BoardProtocol {
         if segue.identifier == "ModifyView" {
             let boardModify : BoardModifyViewController = segue.destination as! BoardModifyViewController
             boardModify.setBoard(board: board_view)
+            boardModify.boardProtocol = self
         }
-
-
     }
-    
-    
-
 }

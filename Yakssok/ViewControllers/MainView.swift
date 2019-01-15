@@ -21,8 +21,17 @@ class MainView: UIViewController, MemberProtocol {
     func setMember(member: Member?) {
         if let obj = member {
             NSLog("전달받은 닉네임: -> \(obj.nickname) + \(obj.id)")
+            if obj != nil {
             DispatchQueue.main.async {
-                self.WelcomNickName.text = "\(String(obj.nickname!)) 님 환영합니다."
+                self.WelcomNickName.text = "\(String(obj.nickname!))님 환영합니다:)"
+                self.LoginBtn.setTitle("로그아웃", for: .normal)
+                self.MemRegBtn.setTitle("회원정보", for: .normal)
+                }
+            }else if obj == nil {
+                DispatchQueue.main.async {
+                    self.LoginBtn.setTitle("로그인", for: .normal)
+                    self.MemRegBtn.setTitle("회원가입", for: .normal)
+                }
             }
         }else{
             NSLog("정보가 전달되지 않았습니다.")

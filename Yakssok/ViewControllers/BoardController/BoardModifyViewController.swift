@@ -9,8 +9,9 @@ class BoardModifyViewController: UIViewController,BoardProtocol {
     @IBOutlet weak var modify_title: UITextField!
     @IBOutlet weak var modify_contents: UITextView!
     
-    let SERVER_ADDRESS : String = "http://172.30.1.23:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
     var board : Board = Board()
+    var boardProtocol : BoardProtocol?
     
     func setBoard(board: Board?) {
         if let obj = board{
@@ -39,12 +40,13 @@ class BoardModifyViewController: UIViewController,BoardProtocol {
         
     }
     @IBAction func btn_modify_delete(_ sender: Any) {
-         _ = navigationController?.popViewController(animated: true)
+         navigationController?.popViewController(animated: true)
     }
     @IBAction func btn_modify_ok(_ sender: Any) {
         self.board.title = modify_title.text
         self.board.contents = modify_contents.text
         boardModifyLoad()
+        navigationController?.popViewController(animated: true)
         
     }
     
@@ -66,8 +68,8 @@ class BoardModifyViewController: UIViewController,BoardProtocol {
                 NSLog("통신에러! 에러메시지:"+error.localizedDescription)
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 NSLog(String(data: data, encoding: .utf8)!)
-                let resultString = String(data: data, encoding: .utf8)
             }
+             self.boardProtocol?.setBoard(board: nil)
         }
         dataTask?.resume()
     }
