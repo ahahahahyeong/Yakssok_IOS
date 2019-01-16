@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A200D9321EE09ED0089EF3C /* MemberModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */; };
 		D81AD52F21EC207400CFACAF /* BoardModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */; };
 		D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */; };
 		D8611D2921E58E1A00FF5CED /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2821E58E1A00FF5CED /* Board.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModifyController.swift; sourceTree = "<group>"; };
 		D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModifyViewController.swift; sourceTree = "<group>"; };
 		D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardWriteViewController.swift; sourceTree = "<group>"; };
 		D8611D2821E58E1A00FF5CED /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A200D9121EE096E0089EF3C /* MemberController */ = {
+			isa = PBXGroup;
+			children = (
+				9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */,
+			);
+			path = MemberController;
+			sourceTree = "<group>";
+		};
 		D8611D2521E58D3200FF5CED /* BoardController */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 		E801805621DE0161008C3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A200D9121EE096E0089EF3C /* MemberController */,
 				D8611D2521E58D3200FF5CED /* BoardController */,
 				E801803821DDF23F008C3E93 /* MainView.swift */,
 				E801805A21DE01F1008C3E93 /* MemberRegistView.swift */,
@@ -304,6 +315,7 @@
 				E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */,
 				D8611D2921E58E1A00FF5CED /* Board.swift in Sources */,
 				D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */,
+				9A200D9321EE09ED0089EF3C /* MemberModifyController.swift in Sources */,
 				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
 				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
 				EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */,
