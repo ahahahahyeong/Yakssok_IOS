@@ -34,7 +34,7 @@ class MemberRegistView: UIViewController {
     @IBOutlet weak var PostcordField: UITextField!
     @IBOutlet weak var AddTextField: UITextField!
     @IBOutlet weak var PostSearchBtn: UIButton!
-    
+   
     let SERVER_ADDRESS : String = "http://192.168.10.93:8080/Yakssok"
     
     override func viewDidLoad() {
