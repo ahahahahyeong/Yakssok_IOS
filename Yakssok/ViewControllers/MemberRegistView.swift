@@ -25,13 +25,15 @@ class MemberRegistView: UIViewController {
     @IBOutlet weak var IdTextField: UITextField!
     @IBOutlet weak var PwTextField: UITextField!
     @IBOutlet weak var PwConfirm: UITextField!
-    @IBOutlet weak var NickTextField: UITextField!
     @IBOutlet weak var NameTextField: UITextField!
     @IBOutlet weak var AgeTextField: UITextField!
+    @IBOutlet weak var NickTextField: UITextField!
     @IBOutlet weak var ManTypeField: UISegmentedControl!
-    @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var HpTextField: UITextField!
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PostcordField: UITextField!
     @IBOutlet weak var AddTextField: UITextField!
+    @IBOutlet weak var PostSearchBtn: UIButton!
     
     let SERVER_ADDRESS : String = "http://192.168.10.93:8080/Yakssok"
     

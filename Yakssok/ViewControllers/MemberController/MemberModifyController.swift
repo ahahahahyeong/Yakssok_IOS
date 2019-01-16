@@ -35,7 +35,9 @@ class MemberModifyController: UIViewController, MemberProtocol{
     @IBOutlet weak var modify_gender: UISegmentedControl!
     @IBOutlet weak var modify_email: UITextField!
     @IBOutlet weak var modify_tel: UITextField!
+    @IBOutlet weak var modify_postcord: UITextField!
     @IBOutlet weak var modify_address: UITextField!
+    @IBOutlet weak var PostSearchBtn: UIButton!
     
     let SERVER_ADDRESS : String = "http://192.168.10.93:8080/Yakssok"
     
