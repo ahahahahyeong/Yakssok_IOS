@@ -1173,6 +1173,9 @@
                                 <state key="normal" title="주소 검색">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV8-Go-gbY" kind="presentation" id="1KP-4o-rbi"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-KI-vcb">
                                 <rect key="frame" x="139" y="574.5" width="132" height="32"/>
@@ -1636,6 +1639,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LV4-We-71r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-109" y="-11"/>
+        </scene>
+        <!--Post Code Selection View Controller-->
+        <scene sceneID="wxD-pk-FR0">
+            <objects>
+                <viewController id="xUP-Nj-wKb" customClass="PostCodeSelectionViewController" customModule="Yakssok" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xvT-9N-Had"/>
+                        <viewControllerLayoutGuide type="bottom" id="P1N-gY-IuV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dvU-Bj-hFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRE-S3-HNU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="SRd-Cf-xYr"/>
+                                    <constraint firstAttribute="width" secondItem="FRE-S3-HNU" secondAttribute="height" multiplier="207:22" id="Yxh-u4-Xau"/>
+                                    <constraint firstAttribute="height" constant="44" id="paT-lN-nXW"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="주소 검색" id="4r1-UZ-ROk">
+                                        <barButtonItem key="leftBarButtonItem" title="닫기" id="cXg-qq-eRa">
+                                            <connections>
+                                                <segue destination="q8c-bW-GOn" kind="unwind" unwindAction="unwindFromPostCodeSelectionView:" id="zKa-gM-3ZH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FRE-S3-HNU" firstAttribute="top" secondItem="xvT-9N-Had" secondAttribute="bottom" id="A6Q-A3-XAf"/>
+                            <constraint firstAttribute="trailing" secondItem="FRE-S3-HNU" secondAttribute="trailing" id="Xbw-eZ-loe"/>
+                            <constraint firstItem="FRE-S3-HNU" firstAttribute="leading" secondItem="dvU-Bj-hFg" secondAttribute="leading" id="c9M-B4-Ohm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ISj-j2-aDl"/>
+                    <connections>
+                        <segue destination="q8c-bW-GOn" kind="unwind" unwindAction="unwindFromPostCodeSelectionView:" id="aht-64-gtg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1d-ZI-vBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q8c-bW-GOn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="-750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AjK-GX-qyD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BV8-Go-gbY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nKZ-R1-rhE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xUP-Nj-wKb" kind="relationship" relationship="rootViewController" id="5wm-Ym-XkB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3V0-0g-r2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="587" y="-749"/>
         </scene>
     </scenes>
     <resources>

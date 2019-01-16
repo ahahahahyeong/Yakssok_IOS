@@ -30,6 +30,7 @@
 		E801806C21DE0360008C3E93 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806321DE0360008C3E93 /* path.png */; };
 		E801806D21DE0360008C3E93 /* fever.png in Resources */ = {isa = PBXBuildFile; fileRef = E801806421DE0360008C3E93 /* fever.png */; };
 		E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82CEEEB21E32AB2001974EB /* LoginViewController.swift */; };
+		E8A3539721EF1B7300D04A19 /* PostCodeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A3539621EF1B7300D04A19 /* PostCodeSelectionViewController.swift */; };
 		E8B6C4CB21E478BC008D00E1 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */; };
 		EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD0B0921EC7D9E00F4C004 /* Member.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		E801806321DE0360008C3E93 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 		E801806421DE0360008C3E93 /* fever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fever.png; sourceTree = "<group>"; };
 		E82CEEEB21E32AB2001974EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E8A3539621EF1B7300D04A19 /* PostCodeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCodeSelectionViewController.swift; sourceTree = "<group>"; };
 		E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 		EBFD0B0921EC7D9E00F4C004 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 		9A200D9121EE096E0089EF3C /* MemberController */ = {
 			isa = PBXGroup;
 			children = (
+				E8A3539621EF1B7300D04A19 /* PostCodeSelectionViewController.swift */,
 				9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */,
 			);
 			path = MemberController;
@@ -316,6 +319,7 @@
 				D8611D2921E58E1A00FF5CED /* Board.swift in Sources */,
 				D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */,
 				9A200D9321EE09ED0089EF3C /* MemberModifyController.swift in Sources */,
+				E8A3539721EF1B7300D04A19 /* PostCodeSelectionViewController.swift in Sources */,
 				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
 				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
 				EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */,
