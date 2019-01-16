@@ -15,10 +15,13 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
+    var loginMember : Member?
+    
+    let SERVER_ADDRESS : String = "http://172.30.1.31:8080/Yakssok"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("멤버객체?\(loginMember?.nickname)")
         
         if self.type == "free" {
             type = "free"

@@ -94,10 +94,10 @@
 		D8611D2521E58D3200FF5CED /* BoardController */ = {
 			isa = PBXGroup;
 			children = (
-				D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */,
 				D8611D2E21E58E8100FF5CED /* BoardViewController.swift */,
 				D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */,
 				D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */,
+				D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */,
 			);
 			path = BoardController;
 			sourceTree = "<group>";

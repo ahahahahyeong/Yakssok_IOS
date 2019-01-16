@@ -5,7 +5,7 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
     
     var boardProtocol: BoardProtocol?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.31:8080/Yakssok"
     var type : String?
     var subject : String?
     var contents : String?
@@ -46,6 +46,7 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
         contents = write_contents.text
         NSLog("글작성제목 \(subject!), 내용 \(contents!)")
         boardWriteLoad()
+        //***
         navigationController?.popViewController(animated: true)
     }
     
@@ -68,6 +69,7 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
             }else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 NSLog("작성완료!"+String(data: data, encoding: .utf8)!)
             }
+            //***
             self.boardProtocol?.setBoard(board: nil)
         }
         dataTask?.resume()
