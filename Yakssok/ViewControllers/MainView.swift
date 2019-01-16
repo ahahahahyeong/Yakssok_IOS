@@ -20,26 +20,27 @@ class MainView: UIViewController, MemberProtocol {
     
     @IBOutlet weak var MemRegBtn: UIButton!
     
+    var memberProtocol: MemberProtocol?
     var loginMember : Member?
     
     func setMember(member: Member?) {
-        if let obj = member {
-            NSLog("전달받은 닉네임: -> \(obj.nickname) + \(obj.id)")
-            if obj != nil {
-                self.loginMember = member
+        //if let obj = member {
+        if let loginMember = member {
+            NSLog("메인 전달받은 닉네임: -> \(loginMember.nickname) + \(loginMember.id)")
+            if loginMember != nil {
             DispatchQueue.main.async {
-                self.WelcomNickName.text = "\(String(obj.nickname!))님 환영합니다:)"
+                self.WelcomNickName.text = "\(String(loginMember.nickname!))님 환영합니다:)"
                 self.LoginBtn.isHidden = true
                 self.MemRegBtn.isHidden = true
                 self.MemberInfoBtn.isHidden = false
                 self.LogoutBtn.isHidden = false
                 self.loginMember = member!
                 }
-            }else if obj == nil {
+            }else if loginMember == nil {
                 self.loginMember = nil
                 let alert = UIAlertAction(title: "로그인 실패", style: UIAlertAction.Style.default, handler: nil)
             }else{
-                NSLog("정보가 전달되지 않았습니다.")
+                NSLog("메인 정보가 전달되지 않았습니다.")
             }
         }
     }
@@ -84,9 +85,27 @@ class MainView: UIViewController, MemberProtocol {
             let loginViewController : LoginViewController = segue.destination as!
             LoginViewController
             loginViewController.memberProtocol = self
+        }else if segue.identifier == "MemberModify"{
+            let modifyController : MemberModifyController = segue.destination as!
+            MemberModifyController
+            modifyController.login = loginMember
+            modifyController.memberProtocol = self
+
         }
     }
-
-
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        //var member: Member? = Member()
+//        //member = self.loginMember
+//        NSLog("회원정보 수정페이지로 타입 전달!!! \(self.loginMember)")
+//        self.memberProtocol?.setMember(member: self.loginMember)
+//    }
+    
+    @IBAction func ModifyMember(_ sender: Any) {
+        var member: Member? 
+        member = self.loginMember
+        NSLog("회원정보 수정페이지로 타입 전달!!! \(self.loginMember?.nickname)")
+        self.memberProtocol?.setMember(member: member)
+    }
 }
 

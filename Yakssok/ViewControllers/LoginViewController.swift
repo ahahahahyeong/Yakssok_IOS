@@ -27,11 +27,11 @@ class LoginViewController: UIViewController {
 
     }
     
-    let SERVER_ADDRESS : String = "http://172.30.1.30:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://192.168.10.93:8080/Yakssok"
     
     @IBAction func btn_login(_ sender: Any) {
         id = IdTextField.text!
-        pw = IdTextField.text!
+        pw = PwTextField.text!
         login()
         
         // 뒤로 되돌아가는 매소드(안드로이드의 finish)
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
                     // 맴버 정보를 받아서 새로운 맴버에 담아서 메인 화면으로 보냄.
                     var member: Member = Member()
                     member = self.member
-                    NSLog("타입 전달!!! \(member)")
+                    NSLog("메인 페이지로 타입 전달!!! \(member)")
                     self.memberProtocol?.setMember(member: member)
                 }catch {
                     let alert = UIAlertController(title: "로그인실패", message: "다시 시도하세요", preferredStyle: UIAlertController.Style.alert)
