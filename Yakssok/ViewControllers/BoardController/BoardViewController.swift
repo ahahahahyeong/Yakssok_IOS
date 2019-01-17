@@ -17,7 +17,7 @@ class BoardViewController: UIViewController, BoardProtocol {
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.31:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
     
     func setBoard(board: Board?) {
         if let obj = board {

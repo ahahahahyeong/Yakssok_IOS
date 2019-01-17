@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
 
     }
     
-    let SERVER_ADDRESS : String = "http://172.30.1.31:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
     
     @IBAction func btn_login(_ sender: Any) {
         id = IdTextField.text!
