@@ -39,7 +39,7 @@ class MemberModifyController: UIViewController, MemberProtocol{
     @IBOutlet weak var modify_address: UITextField!
     @IBOutlet weak var PostSearchBtn: UIButton!
     
-    let SERVER_ADDRESS : String = "http://192.168.10.93:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.1.31:8080/Yakssok"
     
     func setMember(member: Member?) {
         if let loginMember = member {
