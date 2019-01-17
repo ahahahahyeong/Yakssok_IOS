@@ -58,11 +58,23 @@ class MemberRegistView: UIViewController {
         address = self.AddTextField.text!
         
         join()
-        navigationController?.popViewController(animated: true)
+        
+        if self.member == nil {
+            let alert = UIAlertController(title: "회원가입", message: "다시 시도하세요", preferredStyle: UIAlertController.Style.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: false, completion: nil)
+        }else{
+            navigationController?.popViewController(animated: true)
+            let alert = UIAlertController(title: "회원가입", message: "회원가입 성공", preferredStyle: UIAlertController.Style.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: false, completion: nil)
+        }
     }
     
     func join(){
-        NSLog("Modify 서버접근")
+        NSLog("Join 서버접근")
         
         var defaultSession = URLSession(configuration: .default)
         //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
@@ -79,7 +91,7 @@ class MemberRegistView: UIViewController {
         //요청방식 설정
         request.httpMethod = "POST"
         //요청 데이터 설정
-        let body = "id=\(id!)&pw=\(pw!)&nickname=\(nickname!)&name=\(name!)&age=\(age!)&gender=\(gender!)&tel=\(tel!)&email=\(email!)&address=\(address!)".data(using: String.Encoding.utf8)
+        let body = "id=\(id)&pw=\(pw)&nickname=\(nickname)&name=\(name)&age=\(age)&gender=\(gender)&tel=\(tel)&email=\(email)&address=\(address)".data(using: String.Encoding.utf8)
         request.httpBody = body
         
         dataTask = defaultSession.dataTask(with: request) { data, response, error in
@@ -96,7 +108,7 @@ class MemberRegistView: UIViewController {
                     self.member = try JSONDecoder().decode(Member.self, from: data)
                     NSLog("회원가입정보 결과->\(self.member?.nickname)")
                 }catch {
-                    let alert = UIAlertController(title: "수정실패", message: "다시 시도하세요", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "회원가입", message: "회원가입실패", preferredStyle: UIAlertController.Style.alert)
                     let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
                     alert.addAction(ok)
                     self.present(alert, animated: false, completion: nil)
