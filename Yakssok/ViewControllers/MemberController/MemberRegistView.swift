@@ -91,7 +91,7 @@ class MemberRegistView: UIViewController {
         //요청방식 설정
         request.httpMethod = "POST"
         //요청 데이터 설정
-        let body = "id=\(id)&pw=\(pw)&nickname=\(nickname)&name=\(name)&age=\(age)&gender=\(gender)&tel=\(tel)&email=\(email)&address=\(address)".data(using: String.Encoding.utf8)
+        let body = "id=\(id!)&pw=\(pw!)&nickname=\(nickname!)&name=\(name!)&age=\(age!)&gender=\(gender!)&tel=\(tel!)&email=\(email!)&address=\(address!)".data(using: String.Encoding.utf8)
         request.httpBody = body
         
         dataTask = defaultSession.dataTask(with: request) { data, response, error in

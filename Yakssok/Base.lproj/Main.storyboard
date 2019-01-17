@@ -991,14 +991,14 @@
                                 <color key="backgroundColor" red="0.96620899439999997" green="0.63015140999999997" blue="0.86007959320000005" alpha="0.023602552820000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XFR-Cp-qvo">
                                 <rect key="frame" x="139" y="297" width="205" height="30"/>
                                 <color key="backgroundColor" red="0.96620899439999997" green="0.63015140999999997" blue="0.86007959320000005" alpha="0.023602552820000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRG-JW-SV1">
                                 <rect key="frame" x="139" y="337" width="205" height="30"/>
@@ -1333,14 +1333,14 @@
                                 <color key="backgroundColor" red="0.96620899439999997" green="0.63015140999999997" blue="0.86007959320000005" alpha="0.023602552820000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-Ow-SzU">
                                 <rect key="frame" x="139" y="297" width="205" height="30"/>
                                 <color key="backgroundColor" red="0.96620899439999997" green="0.63015140999999997" blue="0.86007959320000005" alpha="0.023602552820000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKi-gi-cvc">
                                 <rect key="frame" x="139" y="337" width="205" height="30"/>
