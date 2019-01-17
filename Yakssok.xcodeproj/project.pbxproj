@@ -100,6 +100,7 @@
 			children = (
 				E8A3539621EF1B7300D04A19 /* PostCodeSelectionViewController.swift */,
 				9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */,
+				E801805A21DE01F1008C3E93 /* MemberRegistView.swift */,
 			);
 			path = MemberController;
 			sourceTree = "<group>";
@@ -171,7 +172,6 @@
 				9A200D9121EE096E0089EF3C /* MemberController */,
 				D8611D2521E58D3200FF5CED /* BoardController */,
 				E801803821DDF23F008C3E93 /* MainView.swift */,
-				E801805A21DE01F1008C3E93 /* MemberRegistView.swift */,
 				E82CEEEB21E32AB2001974EB /* LoginViewController.swift */,
 				E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */,
 			);
