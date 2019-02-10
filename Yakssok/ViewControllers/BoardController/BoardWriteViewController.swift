@@ -5,7 +5,7 @@ class BoardWriteViewController: UIViewController,BoardProtocol {
     
     var boardProtocol: BoardProtocol?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.116.204:8080/Yakssok"
     var type : String?
     var subject : String?
     var contents : String?

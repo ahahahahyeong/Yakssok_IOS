@@ -17,7 +17,7 @@ class BoardViewController: UIViewController, BoardProtocol {
     var type : String?
     var b_idx : Int?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.116.204:8080/Yakssok"
     
     func setBoard(board: Board?) {
         if let obj = board {
@@ -93,7 +93,7 @@ class BoardViewController: UIViewController, BoardProtocol {
     
     func boardDeleteLoad(){
         NSLog("글 삭제 서버접근")
-        
+         
         let defaultSession = URLSession(configuration: .default)
         //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
         var dataTask : URLSessionDataTask?

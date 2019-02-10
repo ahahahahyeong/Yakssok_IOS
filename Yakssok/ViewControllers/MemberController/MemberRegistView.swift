@@ -35,7 +35,7 @@ class MemberRegistView: UIViewController {
     @IBOutlet weak var AddTextField: UITextField!
     @IBOutlet weak var PostSearchBtn: UIButton!
    
-    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://192.168.0.12:8080/Yakssok"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +75,7 @@ class MemberRegistView: UIViewController {
     
     func join(){
         NSLog("Join 서버접근")
-        
+        //URLSession에서 뭘처리하지? 인고팅을 처리하니까 한글이아닌 다ㅡㄴ걸로 받아오고싶으면은 여기서 변환하ㅐ
         var defaultSession = URLSession(configuration: .default)
         //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
         var dataTask : URLSessionDataTask?

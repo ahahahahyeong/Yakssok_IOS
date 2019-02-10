@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		9A200D9321EE09ED0089EF3C /* MemberModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */; };
 		D81AD52F21EC207400CFACAF /* BoardModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */; };
+		D821588F22015F4200E9CCB2 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821588E22015F4200E9CCB2 /* Count.swift */; };
 		D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */; };
+		D8433AB021F2F85D00065D3A /* MemberRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */; };
 		D8611D2921E58E1A00FF5CED /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2821E58E1A00FF5CED /* Board.swift */; };
 		D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2A21E58E2A00FF5CED /* BoardCell.swift */; };
 		D8611D2D21E58E6300FF5CED /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */; };
@@ -48,7 +50,9 @@
 /* Begin PBXFileReference section */
 		9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModifyController.swift; sourceTree = "<group>"; };
 		D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModifyViewController.swift; sourceTree = "<group>"; };
+		D821588E22015F4200E9CCB2 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardWriteViewController.swift; sourceTree = "<group>"; };
+		D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegistViewController.swift; sourceTree = "<group>"; };
 		D8611D2821E58E1A00FF5CED /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		D8611D2A21E58E2A00FF5CED /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 		D8611D2C21E58E6300FF5CED /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +105,18 @@
 				E8A3539621EF1B7300D04A19 /* PostCodeSelectionViewController.swift */,
 				9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */,
 				E801805A21DE01F1008C3E93 /* MemberRegistView.swift */,
+				D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */,
 			);
 			path = MemberController;
+			sourceTree = "<group>";
+		};
+		D84C9179220ABEF700F2C0DD /* EmergencyController */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */,
+			);
+			name = EmergencyController;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D8611D2521E58D3200FF5CED /* BoardController */ = {
@@ -169,11 +183,11 @@
 		E801805621DE0161008C3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D84C9179220ABEF700F2C0DD /* EmergencyController */,
 				9A200D9121EE096E0089EF3C /* MemberController */,
 				D8611D2521E58D3200FF5CED /* BoardController */,
 				E801803821DDF23F008C3E93 /* MainView.swift */,
 				E82CEEEB21E32AB2001974EB /* LoginViewController.swift */,
-				E8B6C4CA21E478BC008D00E1 /* EmergencyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				EBFD0B0921EC7D9E00F4C004 /* Member.swift */,
+				D821588E22015F4200E9CCB2 /* Count.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -323,10 +338,12 @@
 				E801805B21DE01F1008C3E93 /* MemberRegistView.swift in Sources */,
 				E82CEEEC21E32AB2001974EB /* LoginViewController.swift in Sources */,
 				EBFD0B0A21EC7D9E00F4C004 /* Member.swift in Sources */,
+				D8433AB021F2F85D00065D3A /* MemberRegistViewController.swift in Sources */,
 				D8611D2B21E58E2A00FF5CED /* BoardCell.swift in Sources */,
 				D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */,
 				E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */,
 				D8611D2F21E58E8100FF5CED /* BoardViewController.swift in Sources */,
+				D821588F22015F4200E9CCB2 /* Count.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

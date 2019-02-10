@@ -17,7 +17,7 @@ class BoardListViewController: UIViewController, UITableViewDataSource, UITableV
     
     var loginMember : Member?
     
-    let SERVER_ADDRESS : String = "http://172.30.1.27:8080/Yakssok"
+    let SERVER_ADDRESS : String = "http://172.30.116.204:8080/Yakssok"
     
     override func viewDidLoad() {
         super.viewDidLoad()
