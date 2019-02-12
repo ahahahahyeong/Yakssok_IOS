@@ -51,11 +51,11 @@ class LoginViewController: UIViewController {
     func login(){
         NSLog("Login 서버접근")
         
-        var defaultSession = URLSession(configuration: .default)
+        let defaultSession = URLSession(configuration: .default)
         //URLSession 객체를 통해 통신을 처리할 수 있는 테스크 변수 선언
         var dataTask : URLSessionDataTask?
         //url 문자열을 기반으로 다양한 작업을 처리할 수 있는 객체를 생성
-        var urlComponents = URLComponents(string: SERVER_ADDRESS + "/member/mLogin")
+        let urlComponents = URLComponents(string: SERVER_ADDRESS + "/member/mLogin")
         //urlComponents 객체의 쿼리스트링을 지정하는 방법 (? 생략 후 키=벨류$키=벨류)
         //urlComponents?.query
         

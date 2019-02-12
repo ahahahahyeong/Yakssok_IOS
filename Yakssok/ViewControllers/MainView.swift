@@ -46,6 +46,21 @@ class MainView: UIViewController, MemberProtocol {
     }
     
 
+    @IBAction func Pilinfo(_ sender: Any) {
+        let alert = UIAlertController(title: "준비중입니다", message: "잠시만 기다려주세요:)", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(ok)
+        
+        self.present(alert, animated: false, completion: nil)
+    }
+    @IBAction func SearchMap(_ sender: Any) {
+        let alert = UIAlertController(title: "준비중입니다", message: "잠시만 기다려주세요:)", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(ok)
+        
+        self.present(alert, animated: false, completion: nil)
+    }
+    
     @IBAction func ActionLogout(_ sender: Any) {
         
         loginMember = nil

@@ -10,6 +10,7 @@
 		9A200D9321EE09ED0089EF3C /* MemberModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */; };
 		D81AD52F21EC207400CFACAF /* BoardModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */; };
 		D821588F22015F4200E9CCB2 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821588E22015F4200E9CCB2 /* Count.swift */; };
+		D822D27A22127C0A00E66153 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822D27922127C0A00E66153 /* MapViewController.swift */; };
 		D8299A8B21EAFFD2007AE9B1 /* BoardWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */; };
 		D8433AB021F2F85D00065D3A /* MemberRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */; };
 		D8611D2921E58E1A00FF5CED /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8611D2821E58E1A00FF5CED /* Board.swift */; };
@@ -51,6 +52,7 @@
 		9A200D9221EE09ED0089EF3C /* MemberModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModifyController.swift; sourceTree = "<group>"; };
 		D81AD52E21EC207400CFACAF /* BoardModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModifyViewController.swift; sourceTree = "<group>"; };
 		D821588E22015F4200E9CCB2 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		D822D27922127C0A00E66153 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D8299A8A21EAFFD2007AE9B1 /* BoardWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardWriteViewController.swift; sourceTree = "<group>"; };
 		D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegistViewController.swift; sourceTree = "<group>"; };
 		D8611D2821E58E1A00FF5CED /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 				D8433AAF21F2F85D00065D3A /* MemberRegistViewController.swift */,
 			);
 			path = MemberController;
+			sourceTree = "<group>";
+		};
+		D822D27822127BD900E66153 /* MapController */ = {
+			isa = PBXGroup;
+			children = (
+				D822D27922127C0A00E66153 /* MapViewController.swift */,
+			);
+			path = MapController;
 			sourceTree = "<group>";
 		};
 		D84C9179220ABEF700F2C0DD /* EmergencyController */ = {
@@ -183,6 +193,7 @@
 		E801805621DE0161008C3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D822D27822127BD900E66153 /* MapController */,
 				D84C9179220ABEF700F2C0DD /* EmergencyController */,
 				9A200D9121EE096E0089EF3C /* MemberController */,
 				D8611D2521E58D3200FF5CED /* BoardController */,
@@ -344,6 +355,7 @@
 				E801803721DDF23F008C3E93 /* AppDelegate.swift in Sources */,
 				D8611D2F21E58E8100FF5CED /* BoardViewController.swift in Sources */,
 				D821588F22015F4200E9CCB2 /* Count.swift in Sources */,
+				D822D27A22127C0A00E66153 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
